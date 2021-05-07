@@ -1,10 +1,16 @@
 package Java_Dev_Spring21.SpringBootIMBD.Model;
 
 import java.time.LocalDate;
+import Java_Dev_Spring21.SpringBootIMBD.Model.Director;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Movie /*implements Comparable<Movie> */ {
 
 	// MEM VARS
+	@Id
 	private Long id;
 	private String title;
 	private String genre;
@@ -45,6 +51,10 @@ public class Movie /*implements Comparable<Movie> */ {
 	
 	
 	// CONSTRUCTORS
+	public Movie() {
+		super();
+	}
+	
 	public Movie(Long id, String title, String genre, LocalDate releaseDate, Director director) {
 		super();
 		this.id = id;
