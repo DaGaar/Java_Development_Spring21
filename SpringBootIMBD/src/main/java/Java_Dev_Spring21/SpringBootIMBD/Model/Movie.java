@@ -1,7 +1,7 @@
 package Java_Dev_Spring21.SpringBootIMBD.Model;
 
 import java.time.LocalDate;
-import Java_Dev_Spring21.SpringBootIMBD.Model.Director;
+//import Java_Dev_Spring21.SpringBootIMBD.Model.Director;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,7 +15,8 @@ public class Movie /*implements Comparable<Movie> */ {
 	private String title;
 	private String genre;
 	private LocalDate releaseDate;
-	private Director director;
+	//private Director director;
+	private String director;
 	
 	//GETTERS AND SETTERS
 	public Long getId() {
@@ -42,10 +43,16 @@ public class Movie /*implements Comparable<Movie> */ {
 	public void setReleaseDate(LocalDate releaseDate) {
 		this.releaseDate = releaseDate;
 	}
-	public Director getDirector() {
+//	public Director getDirector() {
+//		return director;
+//	}
+//	public void setDirector(Director director) {
+//		this.director = director;
+//	}
+	public String getDirector() {
 		return director;
 	}
-	public void setDirector(Director director) {
+	public void setDirector(String director) {
 		this.director = director;
 	}
 	
@@ -55,7 +62,7 @@ public class Movie /*implements Comparable<Movie> */ {
 		super();
 	}
 	
-	public Movie(Long id, String title, String genre, LocalDate releaseDate, Director director) {
+	public Movie(Long id, String title, String genre, LocalDate releaseDate, String director) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -65,53 +72,53 @@ public class Movie /*implements Comparable<Movie> */ {
 	}
 	
 	//OVERRIDES
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((director == null) ? 0 : director.hashCode());
-		result = prime * result + ((genre == null) ? 0 : genre.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((releaseDate == null) ? 0 : releaseDate.hashCode());
-		result = prime * result + ((title == null) ? 0 : title.hashCode());
-		return result;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Movie other = (Movie) obj;
-		if (director == null) {
-			if (other.director != null)
-				return false;
-		} else if (!director.equals(other.director))
-			return false;
-		if (genre == null) {
-			if (other.genre != null)
-				return false;
-		} else if (!genre.equals(other.genre))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (releaseDate == null) {
-			if (other.releaseDate != null)
-				return false;
-		} else if (!releaseDate.equals(other.releaseDate))
-			return false;
-		if (title == null) {
-			if (other.title != null)
-				return false;
-		} else if (!title.equals(other.title))
-			return false;
-		return true;
-	}
+//	@Override
+//	public int hashCode() {
+//		final int prime = 31;
+//		int result = 1;
+//		result = prime * result + ((director == null) ? 0 : director.hashCode());
+//		result = prime * result + ((genre == null) ? 0 : genre.hashCode());
+//		result = prime * result + ((id == null) ? 0 : id.hashCode());
+//		result = prime * result + ((releaseDate == null) ? 0 : releaseDate.hashCode());
+//		result = prime * result + ((title == null) ? 0 : title.hashCode());
+//		return result;
+//	}
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (this == obj)
+//			return true;
+//		if (obj == null)
+//			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
+//		Movie other = (Movie) obj;
+//		if (director == null) {
+//			if (other.director != null)
+//				return false;
+//		} else if (!director.equals(other.director))
+//			return false;
+//		if (genre == null) {
+//			if (other.genre != null)
+//				return false;
+//		} else if (!genre.equals(other.genre))
+//			return false;
+//		if (id == null) {
+//			if (other.id != null)
+//				return false;
+//		} else if (!id.equals(other.id))
+//			return false;
+//		if (releaseDate == null) {
+//			if (other.releaseDate != null)
+//				return false;
+//		} else if (!releaseDate.equals(other.releaseDate))
+//			return false;
+//		if (title == null) {
+//			if (other.title != null)
+//				return false;
+//		} else if (!title.equals(other.title))
+//			return false;
+//		return true;
+//	}
 	
 	//TOSTRING
 	@Override

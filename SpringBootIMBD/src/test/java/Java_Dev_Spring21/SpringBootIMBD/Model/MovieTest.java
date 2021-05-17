@@ -18,7 +18,8 @@ class MovieTest {
 						"Titan AE",
 						"SciFi",
 						LocalDate.of(1998,  8, 13),
-						new Director("Brad", "Bird", 63)			
+						//new Director("Brad", "Bird", 63)
+						"Brad Bird"
 				);
 	}
 
