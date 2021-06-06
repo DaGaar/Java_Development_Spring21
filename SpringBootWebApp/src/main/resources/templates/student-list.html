@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Student List</title>
+	</head>
+	<body>
+		<h1>Student List goes here...</h1>
+		<nobr>
+			<a th:href="@{/}">Back to Main Landing Page</a>
+			<br></br>
+			<a th:href="@{/api/v1/instructors}">Go to Instructors Page</a>
+			<br></br>
+			<a th:href="@{/api/v1/addStudent}">Go to Student Form Page</a>
+		</nobr>
+		<br></br>
+		<div>
+			<table border="1">
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>eMail</th>
+					<th>DOB</th>
+					<th>Age</th>
+				</tr>
+				<tr th:each="student : ${students}">
+					<td th:utext="${student.id}">...</td>
+					<td th:utext="${student.name}">...</td>
+					<td th:utext="${student.email}">...</td>
+					<td th:utext="${student.dob}">...</td>
+					<td th:utext="${student.age}">...</td>
+				</tr>
+			</table>
+		</div><br><br>
+					<h1>Student Form Page</h1>
+		<form action="addStudent">
+			<label for="id">Id:</label><br>
+			<input type="text" id="id" name="id"><br>
+			
+			<label for="name">Name:</label><br>
+			<input type="text" id="name" name="name"><br>
+			
+			<label for="email">Email:</label><br>
+			<input type="text" id="email" name="email"><br>
+			
+			<label for="dob">DOB:</label><br>
+			<input type="text" id="dob" name="dob"><br>
+			
+			<label for="age">Age:</label><br>
+			<input type="text" id="age" name="age"><br><br>
+			
+			<input type="submit"><br>
+		</form>
+	</body>
+
+</html>
