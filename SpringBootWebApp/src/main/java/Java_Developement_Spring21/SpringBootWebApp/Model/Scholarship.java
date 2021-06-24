@@ -14,8 +14,8 @@ public class Scholarship {
 	private String name;
 	private int amount;
 	
-	@ManyToMany(mappedBy = "scholarships")
-	private List<Student> students;
+//	@ManyToMany(mappedBy = "scholarships")
+//	private List<Student> students;
 	
 	//CONSTRUCTORS
 	public Scholarship() {
@@ -28,7 +28,7 @@ public class Scholarship {
 		this.id = id;
 		this.name = name;
 		this.amount = amount;
-		this.students = students;
+//		this.students = students;
 	}
 
 	//GETTERS AND SETTERS
@@ -56,17 +56,17 @@ public class Scholarship {
 		this.amount = amount;
 	}
 
-	public List<Student> getStudents() {
-		return students;
-	}
-
-	public void setStudents(List<Student> students) {
-		this.students = students;
-	}
+//	public List<Student> getStudents() {
+//		return students;
+//	}
+//
+//	public void setStudents(List<Student> students) {
+//		this.students = students;
+//	}
 
 	@Override
 	public String toString() {
-		return "Scholarship [id=" + id + ", name=" + name + ", amount=" + amount + ", students=" + students + "]";
+		return "Scholarship [id=" + id + ", name=" + name + ", amount=" + amount +  "]";
 	}
 	
 }

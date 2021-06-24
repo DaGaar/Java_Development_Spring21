@@ -1,4 +1,3 @@
-
 insert into student(id, name, email, dob, age) values (101, 'Hank Pym', 'hank@antman.ant', '1991-12-12', 50);
 insert into student(id, name, email, dob, age) values (102, 'Bruce Banner', 'bb@gamma.rays', '1980-10-13', 40);
 insert into student(id, name, email, dob, age) values (103, 'Hawk Eye', 'arrowGuy77@nevermisses.net', '1980-10-13', 43);
@@ -15,19 +14,25 @@ insert into student(id, name, email, dob, age) values (113, 'Harvey Bent', 'gets
 insert into student(id, name, email, dob, age) values (114, 'Jerry', 'lovefinderz@hotmail.com', '1998-12-14', 26);
 insert into student(id, name, email, dob, age) values (115, 'Morty Summers', 'picklerick@gmail.com', '1912-11-05', 63);
 
+insert into scholarship(id, name, amount) values (111, 'You need it more than I do', 5);
+insert into scholarship(id, name, amount) values (112, 'Booze Bonds', 2000);
+insert into scholarship(id, name, amount) values (113, 'What I found in my basement', 20000);
 
---insert into instructor(id, name, dob) values (101, 'Mr. Barnes', '1955-12-15');
---insert into instructor(id, name, dob) values (102, 'Dr. Malone', '1946-01-11');
---insert into instructor(id, name, dob) values (103, 'Mrs. Reeves', '1977-09-15');
---insert into instructor(id, name, dob) values (104, 'Dr. Head', '1986-10-21');
---insert into instructor(id, name, dob) values (105, 'Dr. Doom', '1991-11-26');
---insert into instructor(id, name, dob) values (106, 'Prof. Sallow', '1979-11-13');
+insert into student_scholarships(students_id, scholarships_id) values (105, 111);
+insert into student_scholarships(students_id, scholarships_id) values (106, 112);
+insert into student_scholarships(students_id, scholarships_id) values (105, 113);
 
---insert into course(id, name, department) values (143, 'JavaDev', 'CompScience');
---insert into course(id, name, department) values (144, 'HomeEc', 'Gen Ed');
---insert into course(id, name, department) values (145, 'Spanish', 'Language');
---insert into course(id, name, department) values (146, 'College Alg', 'Math');
---insert into course(id, name, department) values (147, 'Comp 2', 'English');
---insert into course(id, name, department) values (148, 'Comp 1', 'English');
---insert into course(id, name, department) values (149, 'Bible History', 'History');
+insert into instructor(id, name, dob) values (101, 'Mr. Barnes', '1955-12-15');
+insert into instructor(id, name, dob) values (102, 'Dr. Malone', '1946-01-11');
+insert into instructor(id, name, dob) values (103, 'Mrs. Reeves', '1977-09-15');
+insert into instructor(id, name, dob) values (104, 'Dr. Head', '1986-10-21');
+insert into instructor(id, name, dob) values (105, 'Dr. Doom', '1991-11-26');
+insert into instructor(id, name, dob) values (106, 'Prof. Sallow', '1979-11-13');
 
+insert into course(id, name, department, instructor_id) values (143, 'JavaDev', 'CompScience', 101);
+insert into course(id, name, department, instructor_id) values (144, 'HomeEc', 'Gen Ed', 105);
+insert into course(id, name, department, instructor_id, student_id) values (145, 'Spanish', 'Language', 106,  101);
+insert into course(id, name, department, instructor_id) values (146, 'College Alg', 'Math', 103);
+insert into course(id, name, department, instructor_id) values (147, 'Comp 2', 'English', 102);
+insert into course(id, name, department, instructor_id) values (148, 'Comp 1', 'English', 102);
+insert into course(id, name, department, instructor_id) values (149, 'Bible History', 'History', 104);

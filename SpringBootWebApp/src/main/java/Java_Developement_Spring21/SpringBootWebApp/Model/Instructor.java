@@ -15,21 +15,21 @@ public class Instructor {
 	private String name;
 	private LocalDate dob;
 	
-	@OneToMany(mappedBy = "instructor")
-	private List<Course> courses;
+//	@OneToMany(mappedBy = "instructor")
+//	private List<Course> courses;
 	
 	//CONSTRUCTORS
 	public Instructor() {
 		super();
 	}
 
-	public Instructor(Long id, String name, LocalDate dob, List<Course> courses) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.dob = dob;
-		this.courses = courses;
-	}
+//	public Instructor(Long id, String name, LocalDate dob, List<Course> courses) {
+//		super();
+//		this.id = id;
+//		this.name = name;
+//		this.dob = dob;
+//		this.courses = courses;
+//	}
 
 	public Instructor(Long id, String name, LocalDate dob) {
 		super();
@@ -63,13 +63,13 @@ public class Instructor {
 		this.dob = dob;
 	}
 
-	public List<Course> getCourses() {
-		return courses;
-	}
-
-	public void setCourses(List<Course> courses) {
-		this.courses = courses;
-	}
+//	public List<Course> getCourses() {
+//		return courses;
+//	}
+//
+//	public void setCourses(List<Course> courses) {
+//		this.courses = courses;
+//	}
 	
 	
 

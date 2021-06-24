@@ -13,11 +13,11 @@ public class Course {
 	private String name;
 	private String department;
 	
-	@ManyToOne()
-	private Student student;
-	
-	@ManyToOne()
-	private Instructor instructor;
+//	@ManyToOne()
+//	private Student student;
+//	
+//	@ManyToOne()
+//	private Instructor instructor;
 	
 
 	//CONSTRUCTORS
@@ -27,14 +27,14 @@ public class Course {
 
 
 
-	public Course(Long id, String name, String department, Student student, Instructor instructor) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.department = department;
-		this.student = student;
-		this.instructor = instructor;
-	}
+//	public Course(Long id, String name, String department, Student student, Instructor instructor) {
+//		super();
+//		this.id = id;
+//		this.name = name;
+//		this.department = department;
+//		this.student = student;
+//		this.instructor = instructor;
+//	}
 
 
 
@@ -48,13 +48,13 @@ public class Course {
 
 
 	//GETTERS AND SETTERS
-	public Student getStudent() {
-		return student;
-	}
-
-	public void setStudent(Student student) {
-		this.student = student;
-	}
+//	public Student getStudent() {
+//		return student;
+//	}
+//
+//	public void setStudent(Student student) {
+//		this.student = student;
+//	}
 	
 	public Long getId() {
 		return id;
@@ -79,12 +79,12 @@ public class Course {
 	public void setDepartment(String department) {
 		this.department = department;
 	}
-	public Instructor getInstructor() {
-		return instructor;
-	}
-	public void setInstructor(Instructor instructor) {
-		this.instructor = instructor;
-	}
+//	public Instructor getInstructor() {
+//		return instructor;
+//	}
+//	public void setInstructor(Instructor instructor) {
+//		this.instructor = instructor;
+//	}
 
 
 
@@ -95,8 +95,7 @@ public class Course {
 
 	@Override
 	public String toString() {
-		return "Course [id=" + id + ", name=" + name + ", department=" + department + ", instructor=" + instructor
-				+ "]";
+		return "Course [id=" + id + ", name=" + name + ", department=" + department + ", instructor=" +  "]";
 	}
 	
 
