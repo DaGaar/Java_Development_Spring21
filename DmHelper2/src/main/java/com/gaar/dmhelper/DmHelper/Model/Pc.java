@@ -19,16 +19,32 @@ public class Pc {
 	private Integer hp;
 	private Integer initiative;
 	
-	@OneToMany(mappedBy = "pc")
-	private List<EncounterCombat> encounterCombat;
+//	@OneToMany(mappedBy = "pc")
+//	private List<EncounterCombat> encounterCombat;
 
 	//CONSTRUCTORS
 	public Pc() {
 		super();
 	}
 	
+	
+	
+//	public Pc(Long id, String name, Integer level, Integer perceptionMod, Integer insightMod, Integer ac, Integer hp,
+//			Integer initiative, List<EncounterCombat> encounterCombat) {
+//		super();
+//		this.id = id;
+//		this.name = name;
+//		this.level = level;
+//		this.perceptionMod = perceptionMod;
+//		this.insightMod = insightMod;
+//		this.ac = ac;
+//		this.hp = hp;
+//		this.initiative = initiative;
+//		this.encounterCombat = encounterCombat;
+//	}
+
 	public Pc(Long id, String name, Integer level, Integer perceptionMod, Integer insightMod, Integer ac, Integer hp,
-			Integer initiative, List<EncounterCombat> encounterCombat) {
+			Integer initiative) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -38,7 +54,6 @@ public class Pc {
 		this.ac = ac;
 		this.hp = hp;
 		this.initiative = initiative;
-		this.encounterCombat = encounterCombat;
 	}
 
 	//GETTERS AND SETTERS
@@ -106,20 +121,20 @@ public class Pc {
 		this.initiative = initiative;
 	}
 
-	public List<EncounterCombat> getEncounterCombat() {
-		return encounterCombat;
-	}
+//	public List<EncounterCombat> getEncounterCombat() {
+//		return encounterCombat;
+//	}
+//
+//	public void setEncounterCombat(List<EncounterCombat> encounterCombat) {
+//		this.encounterCombat = encounterCombat;
+//	}
 
-	public void setEncounterCombat(List<EncounterCombat> encounterCombat) {
-		this.encounterCombat = encounterCombat;
-	}
-
-	@Override
-	public String toString() {
-		return "Pc [id=" + id + ", name=" + name + ", level=" + level + ", perceptionMod=" + perceptionMod
-				+ ", insightMod=" + insightMod + ", ac=" + ac + ", hp=" + hp + ", initiative=" + initiative
-				+ ", encounterCombat=" + encounterCombat + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Pc [id=" + id + ", name=" + name + ", level=" + level + ", perceptionMod=" + perceptionMod
+//				+ ", insightMod=" + insightMod + ", ac=" + ac + ", hp=" + hp + ", initiative=" + initiative
+//				+ ", encounterCombat=" + encounterCombat + "]";
+//	}
 	
 	
 }
