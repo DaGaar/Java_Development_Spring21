@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<body>
+
+		<p>This example uses the addEventListener() method to attach a click event to a button.</p>
+
+		<button id="hitBtn">Hit</button>
+		<!-- <button id="missBtn">Miss</button>
+		<button id="critHitBtn">Critical Hit!</button>
+		<button id="critMissBtn">Critical Miss!</button>
+		<button id="bloodiedBtn">Bloodied</button>
+		<button id="killBtn">Kill</button>
+		<button id="massiveDmgBtn">Massive Damage!</button> -->
+
+
+		<p id="demo"></p>
+
+		<script>
+			document.getElementById("hitBtn").addEventListener("click", function() {
+			document.getElementById("demo").innerHTML = "Whap!";
+			});
+			// document.getElementById("missBtn").addEventListener("click", function() {
+			//   document.getElementById("demo").innerHTML = "Wiff!";
+			// });
+			// 
+			// document.getElementById("critHitBtn").addEventListener("click", function() {
+			//   document.getElementById("demo").innerHTML = "Big Whap!";
+			// });
+			// document.getElementById("critMissBtn").addEventListener("click", function() {
+			//   document.getElementById("demo").innerHTML = "Big Wiff!";
+			// });
+		</script>
+
+	</body>
+</html>

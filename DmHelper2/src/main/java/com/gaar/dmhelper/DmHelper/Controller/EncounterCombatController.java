@@ -15,6 +15,6 @@ public class EncounterCombatController {
 	@RequestMapping("/encounter")
 	public String encounterCombat() {
 		System.out.println("inside EncounterCombatController encounterCombat");
-		return "EncounterCombat Page";
+		return "EncounterOccupants.html";
 	}
 }

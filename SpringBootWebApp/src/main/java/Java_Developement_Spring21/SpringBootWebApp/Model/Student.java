@@ -28,7 +28,6 @@ public class Student {
 	// CONSTRUCTORS
 	public Student() {
 		super();
-		System.out.println("call constructor");
 	}
 	
 //	public Student(Long id, String name, String email, LocalDate dob, Integer age, List<Course> courses,

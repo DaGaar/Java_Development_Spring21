@@ -4,10 +4,15 @@ package Java_Developement_Spring21.SpringBootWebApp.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -44,6 +49,30 @@ public class StudentController {
 		return studentService.findAll();
 	}
 	
+	@PostMapping("/students")
+	public Student createStudent(@RequestBody Student student) {
+		return studentService.save(student);
+	}
+	
+	// PUT REQUEST IS USED TO MODIFY AN EXISTING RECORD
+	@PutMapping("/students/{id}")
+	public ResponseEntity<Student> updateStudent(@PathVariable Long id, @RequestBody Student studentDetails) {
+		
+		// STEP ONE: RETRIEVE STUDENT RECORD FROM THE DB USING ID
+		Student student = studentService.findById(id);
+		
+		// STEP TWO: UPDATE RETRIEVED STUDENT WITH NEW STUDENT DETAILS
+		student.setName(studentDetails.getName());
+		student.setEmail(studentDetails.getEmail());
+		student.setDob(studentDetails.getDob());
+		student.setAge(studentDetails.getAge());
+		
+		//STEP THREE: SAVE THE MODIFIED STUDENT RECORD TO THE DB
+		Student updatedStudent = studentService.save(student);
+		
+		//RETURN A RESPONSE CONTAINING OK AND THE UPDATED STUDENT RECORD
+		return ResponseEntity.ok(updatedStudent);
+	}
 	
 }
 	//@Autowired
