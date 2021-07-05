@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SomethingHappensComponent implements OnInit {
 
   hit = 'Glancing blow';
+  element?: HTMLElement;
   crit = '';
   
   constructor() { }
@@ -15,4 +16,32 @@ export class SomethingHappensComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClickHit() {
+    this.element = document.getElementById('demo') as HTMLElement;
+    this.element.innerHTML="Whap";
+  }
+  onClickMiss() {
+    this.element = document.getElementById('demo') as HTMLElement;
+    this.element.innerHTML="Wiff!";
+  }
+  onClickCritHit() {
+    this.element = document.getElementById('demo') as HTMLElement;
+    this.element.innerHTML="Big Whap!";
+  }
+  onClickCritMiss() {
+    this.element = document.getElementById('demo') as HTMLElement;
+    this.element.innerHTML="Big Wiff!";
+  }
+  onClickBloodied() {
+    this.element = document.getElementById('demo') as HTMLElement;
+    this.element.innerHTML="spurt!";
+  }
+  onClickKill() {
+    this.element = document.getElementById('demo') as HTMLElement;
+    this.element.innerHTML="X.X";
+  }
+  onClickMassiveDmg() {
+    this.element = document.getElementById('demo') as HTMLElement;
+    this.element.innerHTML="Big Hurt";
+  }
 }

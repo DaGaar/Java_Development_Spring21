@@ -44,4 +44,9 @@ export class StudentListComponent implements OnInit {
       this.students = data;
     });
   }
+
+  updateStudent(id?: number) {
+    console.log(id);
+    this.router.navigate(['update-student', id]);
+  }
 }

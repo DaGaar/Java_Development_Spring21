@@ -18,18 +18,18 @@ export class UpdateStudentComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    // this.id = this.route.snapshot.params['id'];
+    this.id = this.route.snapshot.params['id'];
 
-    // this.studentService.getStudentById(this.id).subscribe(data => {
-    //   this.student = data;
-    // }, error => console.log(error));
+    this.studentService.getStudentById(this.id).subscribe(data => {
+      this.student = data;
+    }, error => console.log(error));
   }
 
-  // onSubmit(){
-  //   this.studentService.updateStudent(this.id, this.student).subscribe( data =>{
-  //     this.goToStudentList();
-  //   }, error => console.log(error));
-  // }
+  onSubmit(){
+    this.studentService.updateStudent(this.id, this.student).subscribe( data =>{
+      this.goToStudentList();
+    }, error => console.log(error));
+  }
 
   goToStudentList(){
     this.router.navigate(['/students']);
