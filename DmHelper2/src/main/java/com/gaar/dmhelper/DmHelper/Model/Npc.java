@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -12,7 +13,7 @@ public class Npc {
 	@Id
 	private Long id;
 	private String name;
-	private Integer dc;
+	private Double dc;
 	private Boolean enemy;
 	private Boolean ally;
 	private Integer perceptionMod;
@@ -20,15 +21,20 @@ public class Npc {
 	private Integer ac;
 	private Integer initiative;
 	
-	@OneToMany(mappedBy = "npc")
+
+	
+	@ManyToMany(mappedBy = "npc")
 	private List<EncounterCombat> encounterCombat;
+	
+//	@OneToMany(mappedBy = "npc")
+//	private List<EncounterCombat> encounterCombat;
 
 	//CONSTRUCTORS
 	public Npc() {
 		super();
 	}
 	
-	public Npc(Long id, String name, Integer dc, Boolean enemy, Boolean ally, Integer perceptionMod, Integer insightMod,
+	public Npc(Long id, String name, Double dc, Boolean enemy, Boolean ally, Integer perceptionMod, Integer insightMod,
 			Integer ac, Integer initiative, List<EncounterCombat> encounterCombat) {
 		super();
 		this.id = id;
@@ -60,11 +66,11 @@ public class Npc {
 		this.name = name;
 	}
 
-	public Integer getDc() {
+	public Double getDc() {
 		return dc;
 	}
 
-	public void setDc(Integer dc) {
+	public void setDc(Double dc) {
 		this.dc = dc;
 	}
 

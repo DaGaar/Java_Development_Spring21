@@ -12,27 +12,6 @@ export class StudentListComponent implements OnInit {
 
   students?: Student[];
 
- // constructor() { }
-
-  // ngOnInit(): void {
-  //   this.students = [
-  //     {
-  //       "id":1,
-  //       "name":'Jimi Hendrix',
-  //       "email": 'jh@purplehaze.us',
-  //       dob: new Date('1942-11-07'),
-  //       "age": 27
-  //     },
-  //     {
-  //       "id":2,
-  //       "name":'Stevie Ray Vaughan',
-  //       "email": 'srv@texasblues.tx',
-  //       dob: new Date('1954-10-03'),
-  //       "age": 35
-  //     }
-  //   ]
-  // }
-
   constructor(private studentService: StudentService, private router: Router) {}
 
   ngOnInit(): void {
@@ -48,5 +27,16 @@ export class StudentListComponent implements OnInit {
   updateStudent(id?: number) {
     console.log(id);
     this.router.navigate(['update-student', id]);
+  }
+
+  deleteStudent(id?: number) {
+    this.studentService.deleteStudent(id).subscribe(data => {
+      console.log(data);
+      this.getStudents();
+    });
+  }
+
+  viewStudent(id?: number) {
+    this.router.navigate(['student-detail', id]);
   }
 }

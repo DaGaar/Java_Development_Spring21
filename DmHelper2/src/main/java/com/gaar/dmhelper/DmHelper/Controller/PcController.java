@@ -57,6 +57,7 @@ public class PcController {
 		pc.setLevel(pcDetails.getLevel());
 		pc.setPerceptionMod(pcDetails.getPerceptionMod());
 		pc.setAc(pcDetails.getAc());
+		pc.setCurrentHp(pcDetails.getCurrentHp());
 		
 		//STEP THREE: SAVE THE MODIFIED STUDENT RECORD TO THE DB
 		Pc updatedPc = pcService.save(pc);
@@ -64,5 +65,15 @@ public class PcController {
 		//RETURN A RESPONSE CONTAINING OK AND THE UPDATED STUDENT RECORD
 		return ResponseEntity.ok(updatedPc);
 	}
+	
+	//TODO
+	//Test getDmgTaken method
+//	@PutMapping("/pcs/dmg{id}")
+//	public Pc currentHp(@PathVariable Long id, @RequestBody Pc pcDetails) {
+//		
+//		Pc pc = pcService.findById(id);
+//		
+//		return pcService.getDmgTaken(Pc pc);
+//	}
 
 }

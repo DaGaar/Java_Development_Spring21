@@ -1,13 +1,16 @@
 package Java_Developement_Spring21.SpringBootWebApp.Controller;
 
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import Java_Developement_Spring21.SpringBootWebApp.DAO.StudentDAO;
+import Java_Developement_Spring21.SpringBootWebApp.Model.Course;
 import Java_Developement_Spring21.SpringBootWebApp.Model.Instructor;
 import Java_Developement_Spring21.SpringBootWebApp.Model.Student;
 import Java_Developement_Spring21.SpringBootWebApp.Service.StudentService;
@@ -54,6 +58,12 @@ public class StudentController {
 		return studentService.save(student);
 	}
 	
+	@GetMapping("/students/{id}")
+	public ResponseEntity<Student> getStudentById(@PathVariable Long id) {
+		Student student = studentService.findById(id);
+		return ResponseEntity.ok(student);
+	}
+	
 	// PUT REQUEST IS USED TO MODIFY AN EXISTING RECORD
 	@PutMapping("/students/{id}")
 	public ResponseEntity<Student> updateStudent(@PathVariable Long id, @RequestBody Student studentDetails) {
@@ -74,6 +84,23 @@ public class StudentController {
 		return ResponseEntity.ok(updatedStudent);
 	}
 	
+	// DELETE REQUEST IS USED TO DELETE AN EXISTING STUDENT RECORD
+	@DeleteMapping("/students/{id}")
+	public ResponseEntity<Map<String, Boolean>> deleteStudent(@PathVariable Long id) {
+		
+		//STEP ONE: RETRIEVE STUDENT RECORD FROM THE DATABASE USING ID
+		Student student = studentService.findById(id);
+		
+		// STEP TWO: USE CALL SERVICE'S DELETE METHOD
+		studentService.delete(student);
+		
+		// STEP THREE: CREATE A HASHMAP TO HOLD A MSG (KEY) AND TRUE (VALUE)
+		Map<String, Boolean> response = new HashMap<String, Boolean>();
+		response.put("deleted", Boolean.TRUE);
+		
+		// RETURN MAP INSIDE RESPONSE ENTITY
+		return ResponseEntity.ok(response);
+	}
 }
 	//@Autowired
 	//private CourseService courseService;

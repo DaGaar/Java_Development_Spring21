@@ -1,0 +1,28 @@
+<h2>Action Log</h2>
+<table class = "table table-striped">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Attacker Id</th>
+			<th>Attacked Id</th>
+			<th>Damage Done</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor = "let action of actions">
+			<td>{{action.id}}</td>
+			<td>{{action.attackerId}}</td>
+			<td>{{action.attackedId}}</td>
+			<td>{{action.dmgDone}}</td>
+			<!-- <td>
+				<button (click) = "updateStudent(action.id)" class="btn btn-primary">Update</button>
+			</td>
+			<td>
+				<button (click) = "deleteStudent(action.id)" class="btn btn-danger" id="deleteBtn">Delete</button>
+			</td>
+			<td>
+				<button (click) = "viewStudent(action.id)" class="btn btn-primary" id="viewBtn">View</button>
+			</td> -->
+		</tr>
+	</tbody>
+</table>

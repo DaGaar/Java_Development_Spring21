@@ -19,8 +19,8 @@ public class Student {
 	private LocalDate dob;
 	private Integer age;
 	
-//	@OneToMany(mappedBy = "student")
-//	private List<Course> courses;
+	@OneToMany(mappedBy = "student")
+	private List<Course> courses;
 	
 	@ManyToMany
 	private List<Scholarship> scholarships;
@@ -42,15 +42,15 @@ public class Student {
 //		this.scholarships = scholarships;
 //	}
 
-//	public Student(Long id, String name, String email, LocalDate dob, Integer age, List<Course> courses) {
-//		super();
-//		this.id = id;
-//		this.name = name;
-//		this.email = email;
-//		this.dob = dob;
-//		this.age = age;
-//		this.courses = courses;
-//	}
+	public Student(Long id, String name, String email, LocalDate dob, Integer age, List<Course> courses) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.dob = dob;
+		this.age = age;
+		this.courses = courses;
+	}
 
 
 
@@ -71,7 +71,7 @@ public class Student {
 		this.age = age;
 	}
 	
-//	GETTERS AND SETTERS
+	//GETTERS AND SETTERS
 //	public List<Course> getCourses() {
 //		return courses;
 //	}

@@ -1,0 +1,20 @@
+/* TAG SELECTORS */
+button {
+	text-align: center;
+}
+
+td, th {
+	text-align: center;
+}
+
+/* ID SELECTORS */
+#deleteBtn {
+	margin-left: 10px;
+}
+#viewBtn {
+	margin-left: 10px;
+}
+
+/* #viewBtn {
+	margin-left: 10px;
+} */

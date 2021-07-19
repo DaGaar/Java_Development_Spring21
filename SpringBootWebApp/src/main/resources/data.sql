@@ -23,11 +23,15 @@ insert into student(id, name, email, dob, age) values (115, 'Morty Summers', 'pi
 --insert into instructor(id, name, dob) values (105, 'Dr. Doom', '1991-11-26');
 --insert into instructor(id, name, dob) values (106, 'Prof. Sallow', '1979-11-13');
 
---insert into course(id, name, department) values (143, 'JavaDev', 'CompScience');
---insert into course(id, name, department) values (144, 'HomeEc', 'Gen Ed');
---insert into course(id, name, department) values (145, 'Spanish', 'Language');
---insert into course(id, name, department) values (146, 'College Alg', 'Math');
---insert into course(id, name, department) values (147, 'Comp 2', 'English');
---insert into course(id, name, department) values (148, 'Comp 1', 'English');
---insert into course(id, name, department) values (149, 'Bible History', 'History');
+insert into course(id, name, department, student_id) values (143, 'JavaDev', 'CompScience', 101);
+insert into course(id, name, department, student_id) values (144, 'HomeEc', 'Gen Ed', 102);
+insert into course(id, name, department, student_id) values (145, 'Spanish', 'Language', 103);
+insert into course(id, name, department, student_id) values (146, 'College Alg', 'Math', 104);
+insert into course(id, name, department, student_id) values (147, 'Comp 2', 'English', 105);
+insert into course(id, name, department, student_id) values (148, 'Comp 1', 'English', 106);
+insert into course(id, name, department, student_id) values (149, 'Bible History', 'History', 107);
 
+--insert into course_student(course_id, student_id) values (143, 101);
+--insert into course_student(course_id, student_id) values (144, 101);
+--insert into course_student(course_id, student_id) values (145, 101);
+--insert into course_student(course_id, student_id) values (146, 101);

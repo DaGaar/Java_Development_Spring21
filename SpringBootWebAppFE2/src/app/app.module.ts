@@ -9,6 +9,9 @@ import { CreateStudentComponent } from './create-student/create-student.componen
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UpdateStudentComponent } from './update-student/update-student.component';
+import { StudentDetailComponent } from './student-detail/student-detail.component';
+import { CourseListComponent } from './course-list/course-list.component';
+import { ScholarshipListComponent } from './scholarship-list/scholarship-list.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,9 @@ import { UpdateStudentComponent } from './update-student/update-student.componen
     StudentListComponent,
     CreateStudentComponent,
     UpdateStudentComponent,
+    StudentDetailComponent,
+    CourseListComponent,
+    ScholarshipListComponent,
   ],
   imports: [
     BrowserModule,

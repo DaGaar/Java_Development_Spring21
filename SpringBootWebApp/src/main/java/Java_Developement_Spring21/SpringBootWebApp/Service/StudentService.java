@@ -31,4 +31,8 @@ public class StudentService {
 		return studentDAO.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Student not found with id: " + id));
 	}
+	
+	public void delete(Student student) {
+		studentDAO.delete(student);
+	}
 }

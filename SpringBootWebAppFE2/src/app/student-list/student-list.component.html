@@ -7,7 +7,8 @@
 			<th>Email</th>
 			<th>DOB</th>
 			<th>Age</th>
-			<th>Actions</th>
+			<th>Update</th>
+			<th>Delete</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -18,7 +19,13 @@
 			<td>{{student.dob}}</td>
 			<td>{{student.age}}</td> 
 			<td>
-				<button (click) = "updateStudent(student.id)" class="btn btn-info">Update</button>
+				<button (click) = "updateStudent(student.id)" class="btn btn-primary">Update</button>
+			</td>
+			<td>
+				<button (click) = "deleteStudent(student.id)" class="btn btn-danger" id="deleteBtn">Delete</button>
+			</td>
+			<td>
+				<button (click) = "viewStudent(student.id)" class="btn btn-primary" id="viewBtn">View</button>
 			</td>
 		</tr>
 	</tbody>
