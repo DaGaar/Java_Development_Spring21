@@ -14,8 +14,8 @@ public class Scholarship {
 	private String name;
 	private int amount;
 	
-//	@ManyToMany(mappedBy = "scholarships")
-//	private List<Student> students;
+	@ManyToMany(mappedBy = "scholarships")
+	private List<Student> students;
 	
 	//CONSTRUCTORS
 	public Scholarship() {
@@ -56,13 +56,13 @@ public class Scholarship {
 		this.amount = amount;
 	}
 
-//	public List<Student> getStudents() {
-//		return students;
-//	}
-//
-//	public void setStudents(List<Student> students) {
-//		this.students = students;
-//	}
+	public List<Student> getStudents() {
+		return students;
+	}
+
+	public void setStudents(List<Student> students) {
+		this.students = students;
+	}
 
 	@Override
 	public String toString() {

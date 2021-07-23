@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Character } from './character';
 import { Action } from './action';
+import { Stats } from './stats';
 
 
 @Injectable({
@@ -11,7 +12,7 @@ import { Action } from './action';
 export class CharacterService {
 
 	private baseURL = "http://localhost:8080/api/v1/pcs";
-	private attackerBaseURL = "http://localhost:8080/api/v1/charAttacksMade";
+	private statsBaseURL = "http://localhost:8080/api/v1/stats";
 
 	constructor(private httpClient: HttpClient) { }
 
@@ -35,13 +36,18 @@ export class CharacterService {
    		return this.httpClient.get<Character>(`${this.baseURL}/${id}`);
 	 }
 	 
-	getCharAttacks(id?: number): number{
-		let attacks = 0;
-		let actions = [this.httpClient.get<Action[]>
-			(`${this.attackerBaseURL}/${id}`)];
-		for (let i = 0; i < actions.length; i++) { attacks ++}
+	getCharStats(id?: number): Observable<Stats>{
+		return this.httpClient.get<Stats>(`${this.statsBaseURL}/${id}`)
 
-		console.log(attacks);
-		return attacks;
-	} 
+	}
+
+	// getCharAttacks(id?: number): number{
+	// 	let attacks = 0;
+	// 	let actions = [this.httpClient.get<Action[]>
+	// 		(`${this.attackerBaseURL}/${id}`)];
+	// 	for (let i = 0; i < actions.length; i++) { attacks ++}
+
+	// 	console.log(attacks);
+	// 	return attacks;
+	// } 
 }

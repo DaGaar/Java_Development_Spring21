@@ -4,6 +4,7 @@ import { CharacterService } from '../character-service';
 import { Action } from '../action';
 import { ActionService } from '../action.service';
 import { Router } from '@angular/router';
+import { Stats } from '../stats';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class CharacterListComponent implements OnInit {
 
   characters?: Character[];
   character?: Character;
-  stats?: [];
+  stats?: Stats;
 
  // let charAttacks = getCharAttacks()
 
@@ -24,7 +25,6 @@ export class CharacterListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCharacters();
-    //this.getStats();
   }
 
   private getCharacters() {
@@ -33,9 +33,14 @@ export class CharacterListComponent implements OnInit {
     });
   }
 
-  getStats(id?: number) {
-    this.characterService.getCharAttacks(id);
+  viewCharStats(id?: number) {
+    this.router.navigate(['character-stats', id]);
   }
+  // getStats(id?: number) {
+  //   this.characterService.getCharStats(id).subscribe(data => {
+  //     this.stats = data;
+  //   });
+  // }
 
 
 }

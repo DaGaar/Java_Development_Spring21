@@ -30,17 +30,17 @@ public class Student {
 		super();
 	}
 	
-//	public Student(Long id, String name, String email, LocalDate dob, Integer age, List<Course> courses,
-//			List<Scholarship> scholarships) {
-//		super();
-//		this.id = id;
-//		this.name = name;
-//		this.email = email;
-//		this.dob = dob;
-//		this.age = age;
-//		this.courses = courses;
-//		this.scholarships = scholarships;
-//	}
+	public Student(Long id, String name, String email, LocalDate dob, Integer age, List<Course> courses,
+			List<Scholarship> scholarships) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.dob = dob;
+		this.age = age;
+		this.courses = courses;
+		this.scholarships = scholarships;
+	}
 
 	public Student(Long id, String name, String email, LocalDate dob, Integer age, List<Course> courses) {
 		super();

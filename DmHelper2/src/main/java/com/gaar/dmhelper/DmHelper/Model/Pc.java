@@ -108,6 +108,7 @@ public class Pc {
 	@ManyToMany(mappedBy = "pc")
 	private List<EncounterCombat> encounterCombat;
 	
+	
 //	@OneToMany
 //	private List<Action> actions;
 

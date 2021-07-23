@@ -35,3 +35,13 @@ insert into course(id, name, department, student_id) values (149, 'Bible History
 --insert into course_student(course_id, student_id) values (144, 101);
 --insert into course_student(course_id, student_id) values (145, 101);
 --insert into course_student(course_id, student_id) values (146, 101);
+
+insert into scholarship(id, name, amount) values (101, 'Mo Money', 1000);
+insert into scholarship(id, name, amount) values (102, 'Dat Cash', 1200);
+insert into scholarship(id, name, amount) values (103, 'Fund em', 1500);
+insert into scholarship(id, name, amount) values (104, 'Because You Deserve It', 5000);
+
+insert into student_scholarships(students_id, scholarships_id) values (101, 101);
+insert into student_scholarships(students_id, scholarships_id) values (101, 102);
+insert into student_scholarships(students_id, scholarships_id) values (102, 102);
+insert into student_scholarships(students_id, scholarships_id) values (103, 104);

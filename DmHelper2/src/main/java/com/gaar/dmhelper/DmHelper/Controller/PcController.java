@@ -1,5 +1,6 @@
 package com.gaar.dmhelper.DmHelper.Controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.gaar.dmhelper.DmHelper.Stats;
+import com.gaar.dmhelper.DmHelper.Model.Action;
 import com.gaar.dmhelper.DmHelper.Model.Npc;
 import com.gaar.dmhelper.DmHelper.Model.Pc;
+
 import com.gaar.dmhelper.DmHelper.Service.NpcService;
 import com.gaar.dmhelper.DmHelper.Service.PcService;
 
@@ -45,6 +49,12 @@ public class PcController {
 		return pcService.save(pc);
 	}
 	
+	@GetMapping("/pcs/{id}")
+	public ResponseEntity<Pc> getPcById(@PathVariable Long id) {
+		Pc pc = pcService.findById(id);
+		return ResponseEntity.ok(pc);
+	}
+	
 	// PUT REQUEST IS USED TO MODIFY AN EXISTING RECORD
 	@PutMapping("/pcs/{id}")
 	public ResponseEntity<Pc> updatePc(@PathVariable Long id, @RequestBody Pc pcDetails) {
@@ -64,6 +74,16 @@ public class PcController {
 		
 		//RETURN A RESPONSE CONTAINING OK AND THE UPDATED STUDENT RECORD
 		return ResponseEntity.ok(updatedPc);
+	}
+	
+	@GetMapping("/stats/{id}")
+	public ResponseEntity<Stats> getStatsById(@PathVariable Long id) {
+
+	//	List<Action> actionsOut = actionService.findByAttackerId(id);
+		
+		
+		Stats stats = pcService.genStats(id);
+		return ResponseEntity.ok(stats);
 	}
 	
 	//TODO

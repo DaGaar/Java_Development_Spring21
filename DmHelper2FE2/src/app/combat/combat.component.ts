@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Action } from '../action';
 import { ActionService } from '../action.service';
 import { Router } from '@angular/router';
+import {MatMenuModule} from '@angular/material/menu';
 
 @Component({
   selector: 'app-combat',
@@ -9,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./combat.component.css']
 })
 export class CombatComponent implements OnInit {
+  
 
   action: Action = new Action();
   constructor(private actionService: ActionService, 

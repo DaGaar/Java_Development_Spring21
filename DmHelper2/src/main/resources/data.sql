@@ -20,13 +20,39 @@ insert into npc(id, name, dc, enemy, ally, perception_mod, insight_mod, ac, init
 insert into npc(id, name, dc, enemy, ally, perception_mod, insight_mod, ac, initiative) values (7, 'hostageGirl', 0, false, true, 6, 8, 12, 1);
 insert into npc(id, name, dc, enemy, ally, perception_mod, insight_mod, ac, initiative) values (8, 'hostageBoy', 0, false, true, 7, 4, 12, 1);
 
+--insert into victim(id, atked_id, dmg, effect) values (1, 104, 0, null)
+--insert into victim(id, atked_id, dmg, effect) values (1, 103, 12, null)
+--insert into victim(id, atked_id, dmg, effect) values (1, 101, 3, null)
+--insert into victim(id, atked_id, dmg, effect) values (1, 104, 0, null)
+--insert into victim(id, atked_id, dmg, effect) values (1, 104, 20, null)
+--insert into victim(id, atked_id, dmg, effect) values (1, 103, 5, null)
+--insert into victim(id, atked_id, dmg, effect) values (1, 102, 6, null)
+--insert into victim(id, atked_id, dmg, effect) values (1, 101, 0, null)
+--insert into victim(id, atked_id, dmg, effect) values (1, 104, 0, null)
+--insert into victim(id, atked_id, dmg, effect) values (1, 103, 2, null)
+--insert into victim(id, atked_id, dmg, effect) values (1, 101, 0, null)
+
 insert into encounter_combat(id, name, dificulty) values (101, 'orcsWithHostages', 4);
 
 insert into action(id, encounter_combat, attacker_id, attacked_id, dmg_done)
-	values (1, 101, 101, 104, 10);
+	values (1, 101, 101, 104, 0);
 insert into action(id, encounter_combat, attacker_id, attacked_id, dmg_done) 
 	values (2, 101, 101, 103, 12);
 insert into action(id, encounter_combat, attacker_id, attacked_id, dmg_done)
 	values (3, 101, 102, 101, 3);
 insert into action(id, encounter_combat, attacker_id, attacked_id, dmg_done)
-	values (4, 101, 103, 104, 13);
+	values (4, 101, 103, 104, 0);
+insert into action(id, encounter_combat, attacker_id, attacked_id, dmg_done)
+	values (5, 101, 102, 104, 20);
+insert into action(id, encounter_combat, attacker_id, attacked_id, dmg_done)
+	values (6, 101, 104, 103, 5);
+insert into action(id, encounter_combat, attacker_id, attacked_id, dmg_done)
+	values (8, 101, 103, 102, 6);
+insert into action(id, encounter_combat, attacker_id, attacked_id, dmg_done)
+	values (9, 101, 103, 101, 0);
+insert into action(id, encounter_combat, attacker_id, attacked_id, dmg_done)
+	values (10, 101, 103, 104, 0);
+insert into action(id, encounter_combat, attacker_id, attacked_id, dmg_done)
+	values (11, 101, 104, 103, 2);
+insert into action(id, encounter_combat, attacker_id, attacked_id, dmg_done)
+	values (12, 101, 102, 101, 0);

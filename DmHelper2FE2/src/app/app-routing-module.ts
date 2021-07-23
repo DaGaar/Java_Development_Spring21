@@ -10,6 +10,7 @@ const routes : Routes = [
 	{path : 'combat', component: CombatComponent},
 	{path : 'action-log', component: ActionLogComponent},
 	{path : 'characters', component: CharacterListComponent},
+	{path : '', redirectTo: 'characters', pathMatch: 'full'},
 	{path: 'character-stats/:id', component: CharacterStatsComponent}
 
 ]

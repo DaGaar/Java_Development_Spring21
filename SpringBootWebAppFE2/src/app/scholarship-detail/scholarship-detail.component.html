@@ -1,0 +1,17 @@
+<h3>View Scholarship Details</h3>
+<div>
+	<div>
+		<label><b>Id:</b></label> {{scholarship?.id}} <br>
+		<label><b>Name:</b></label> {{scholarship?.name}} <br>
+		<label><b>Email:</b></label> {{scholarship?.amount}} <br>
+		<label><b>Students:</b></label>
+		<ul *ngFor = "let student of scholarship?.students">
+ 			<li>{{student?.id}}</li>
+ 			<li>{{student?.name}}</li>
+			<li>{{student?.email}}</li>
+			<li>{{student?.dob}}</li>
+			<li>{{student?.age}}</li>
+			<br>
+		</ul>
+	</div>
+</div>

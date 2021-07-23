@@ -4,6 +4,7 @@ import { Character } from '../character';
 import { CharacterService } from '../character-service';
 import { Action } from '../action';
 import { ActionService } from '../action.service';
+import { Stats } from '../stats';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class CharacterStatsComponent implements OnInit {
 
   id?: number;
   character?: Character;
+  stats?: Stats;
 
   constructor(private characterService: CharacterService, private actionService: 
       ActionService, private route: ActivatedRoute) { }
@@ -25,6 +27,12 @@ export class CharacterStatsComponent implements OnInit {
     this.characterService.getCharacterById(this.id).subscribe( data => {
       this.character = data;
     });
+    this.getStats(this.id); 
   }
 
+    getStats(id?: number) {
+    this.characterService.getCharStats(id).subscribe(data => {
+      this.stats = data;
+    });
+  }
 }

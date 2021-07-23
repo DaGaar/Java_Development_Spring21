@@ -6,13 +6,11 @@
 			<th>Name</th>
 			<th>Max HP</th>
 			<th>Current HP</th>
-			<th>Attacks</th>
-			<th>Times Hit</th>
-			<th>Damage Taken</th>
-			<th>Times Attacked</th>
 			<th>Hits</th>
-			<th>Damage Done</th>
-			<th></th>
+			<th>Hit%</th>
+			<th>Damage</th>
+			<th>Damage Recieved</th>
+		
 		</tr>
 	</thead>
 	<tbody>
@@ -21,7 +19,12 @@
 			<td>{{character.name}}</td>
 			<td>{{character.maxHp}}</td>
 			<td>{{character.currentHp}}</td>
-			<td>{{getStats(character.id)}}</td>	
+			<!-- <td>{{getStats(character.id)}}</td>	 -->
+			<td>
+				<button (click) = "viewCharStats(character?.id)" class=
+					"btn btn-primary" id="viewBtn">View Stats
+				</button>
+			</td>
 		</tr>
 <!-- 		
 		<tr *ngFor = "let stat of stats">

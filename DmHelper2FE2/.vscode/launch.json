@@ -8,9 +8,9 @@
       "name": "Launch Chrome DmHelper2FE2 on Angular CLI Server",
       "type": "chrome",
       "request": "launch",
-      "port": 9239,
+      "port": 9232,
       "webRoot": "${workspaceFolder}",
-      "url": "http://localhost:4200/#"
+      "url": "http://localhost:4201/#"
     }
   ]
 }

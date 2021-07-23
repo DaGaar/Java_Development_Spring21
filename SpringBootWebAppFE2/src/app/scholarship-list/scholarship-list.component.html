@@ -1,1 +1,29 @@
-<p>scholarship-list works!</p>
+<h2>Scholarship List</h2>
+<table class = "table table-striped">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Amount</th>
+			<th>Student</th>
+
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor = "let scholarship of scholarships">
+			<td>{{scholarship.id}}</td>
+			<td>{{scholarship.name}}</td>
+			<td>{{scholarship.amount}}</td>
+			<td>
+				<table>
+					<tr *ngFor = "let student of scholarship.students">
+						<td>{{student.name}}</td>
+					</tr>
+				</table>
+			</td>
+			<td>
+				<button (click) = "viewScholarship(scholarship.id)" class="btn btn-primary" id="viewBtn">View</button>
+			</td>
+		</tr>
+	</tbody>
+</table>

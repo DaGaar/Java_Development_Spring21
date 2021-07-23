@@ -12,6 +12,7 @@ import { UpdateStudentComponent } from './update-student/update-student.componen
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 import { CourseListComponent } from './course-list/course-list.component';
 import { ScholarshipListComponent } from './scholarship-list/scholarship-list.component';
+import { ScholarshipDetailComponent } from './scholarship-detail/scholarship-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ScholarshipListComponent } from './scholarship-list/scholarship-list.co
     StudentDetailComponent,
     CourseListComponent,
     ScholarshipListComponent,
+    ScholarshipDetailComponent,
   ],
   imports: [
     BrowserModule,

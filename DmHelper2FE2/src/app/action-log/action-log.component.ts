@@ -6,7 +6,8 @@ import { ActionService } from '../action.service';
 @Component({
   selector: 'app-action-log',
   templateUrl: './action-log.component.html',
-  styleUrls: ['./action-log.component.css']
+  styleUrls: ['./action-log.component.css'],
+  providers: [ ActionService]
 })
 export class ActionLogComponent implements OnInit {
 

@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ActionLogComponent } from './action-log/action-log.component';
 import { CharacterListComponent } from './character-list/character-list.component';
 import { CharacterStatsComponent } from './character-stats/character-stats.component';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -24,11 +26,13 @@ import { CharacterStatsComponent } from './character-stats/character-stats.compo
   ],
   imports: [
     BrowserModule,
+    MatSliderModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

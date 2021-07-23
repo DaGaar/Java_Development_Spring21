@@ -34,12 +34,11 @@ public class ActionController {
 	}
 	
 	@GetMapping("/actions/{id}")
-	public ResponseEntity<Action> getActionById(@PathVariable Long id) {
-		Action action = actionService.findById(id);
+	public ResponseEntity<List<Action>> getActionById(@PathVariable Long id) {
+		List<Action> action = actionService.findByAttackerId(id);
 		return ResponseEntity.ok(action);
 	}
-	
-	
+		
 	@GetMapping("/charAttacksMade/{id}")
 	public ResponseEntity<List<Action>> getActionByAttackerId(@PathVariable Long id) {
 		List<Action> actions = actionService.findByAttackerId(id);
