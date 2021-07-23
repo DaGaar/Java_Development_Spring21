@@ -36,6 +36,10 @@ export class CharacterListComponent implements OnInit {
   viewCharStats(id?: number) {
     this.router.navigate(['character-stats', id]);
   }
+
+  createCharacter() {
+    this.router.navigate(['create-character']);
+  }
   // getStats(id?: number) {
   //   this.characterService.getCharStats(id).subscribe(data => {
   //     this.stats = data;

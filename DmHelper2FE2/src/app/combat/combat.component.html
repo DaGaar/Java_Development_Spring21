@@ -3,60 +3,54 @@
 <html>
 <h2>Combat</h2>
 
-<style>
-
-/*TODO- this section hides pop up form, but dont know
-				how to reveal after hiding. fix this */
-	/* .form-popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
-} */
-
-/* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
-}
-
-/* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
-  opacity: 1;
-}
-</style>
-
 <body>
 <table class="row">
   <div class="column">
-	  <thead>Allies</thead>
-	  <!-- <mat-menu #animals="matMenu">
-    <button mat-menu-item [matMenuTriggerFor]="attack">Vertebrates</button>
-     <button mat-menu-item [matMenuTriggerFor]="spell">Invertebrates</button> 
-    </mat-menu>	 -->
-		<button  class="btn btn-primary">figher1</button>
-		<br>
-		<button  class="btn btn-primary">figher2</button>
-  </div>
-  <div class="column">
-	  <thead>Enemies</thead>
+    <thead>Allies</thead>
+      <tr *ngFor = "let character of characters">
+        <button mat-button [matMenuTriggerFor]="actions">{{character.name}}</button>
+        <mat-menu #actions="matMenu">
+          <button mat-menu-item [matMenuTriggerFor]="attack">Attack</button>
+          <button mat-menu-item [matMenuTriggerFor]="castSpell">Cast Spell</button>
+          <button mat-menu-item [matMenuTriggerFor]="other">Other</button>
+        </mat-menu>
 
-		<button  class="open-button" onclick="openForm()">figher3</button>
-		<br>
-		<button  class="btn btn-primary">figher4</button>
-  </div>
-  <div class="form-popup" id="myForm">
+        <mat-menu #attack="matMenu">
+          <!-- <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
+          <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
+          <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
+          <button mat-menu-item>Birds</button>
+          <button mat-menu-item>Mammals</button> -->
+        </mat-menu>
+
+        <mat-menu #castSpell="matMenu">
+          <!-- <button mat-menu-item>Insects</button>
+          <button mat-menu-item>Molluscs</button>
+          <button mat-menu-item>Crustaceans</button>
+          <button mat-menu-item>Corals</button>
+          <button mat-menu-item>Arachnids</button>
+          <button mat-menu-item>Velvet worms</button>
+          <button mat-menu-item>Horseshoe crabs</button> -->
+        </mat-menu>
+
+        <mat-menu #other="matMenu">
+          <button mat-menu-item>Dash</button>
+          <button mat-menu-item>Disengage</button>
+          <button mat-menu-item>Dodge</button>
+          <button mat-menu-item>Help</button>
+          <button mat-menu-item>Hide</button>
+          <button mat-menu-item>Ready</button>
+          <button mat-menu-item>Ability Check</button>
+          <button mat-menu-item>Use Object</button>
+        </mat-menu>  
+     </tr>
+    </div>
+    <div class="column">
+	   <thead>Enemies</thead>
+
+		
+    </div>
+  <!-- <div class="form-popup" id="myForm">
   <form (ngSubmit)  = "onSubmit()" action="/action_page.php" class="form-container">
     <h1>Action</h1>
 
@@ -79,7 +73,7 @@
 
     <button type="submit" class="btn btn-success">Do it</button>
   </form>
-</div>
+</div> -->
 </table>
 
 

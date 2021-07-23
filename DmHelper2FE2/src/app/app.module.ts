@@ -13,6 +13,8 @@ import { CharacterListComponent } from './character-list/character-list.componen
 import { CharacterStatsComponent } from './character-stats/character-stats.component';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatMenuModule} from '@angular/material/menu';
+import { CreateCharacterComponent } from './create-character/create-character.component';
+import { CreateEncounterComponent } from './create-encounter/create-encounter.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import {MatMenuModule} from '@angular/material/menu';
     CombatComponent,
     ActionLogComponent,
     CharacterListComponent,
-    CharacterStatsComponent
+    CharacterStatsComponent,
+    CreateCharacterComponent,
+    CreateEncounterComponent
   ],
   imports: [
     BrowserModule,
