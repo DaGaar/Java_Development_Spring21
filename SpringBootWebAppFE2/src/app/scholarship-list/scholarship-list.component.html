@@ -5,7 +5,8 @@
 			<th>Id</th>
 			<th>Name</th>
 			<th>Amount</th>
-			<th>Student</th>
+			<th>Studenst</th>
+			<th>View</th>
 
 		</tr>
 	</thead>
@@ -24,6 +25,13 @@
 			<td>
 				<button (click) = "viewScholarship(scholarship.id)" class="btn btn-primary" id="viewBtn">View</button>
 			</td>
+		</tr>
+		<tr>
+			<td><b>Totals: </b></td>
+			<td></td>
+			<td>{{amountTotal | currency}}</td>
+			<td>{{studentCount}}</td>
+			<td></td>
 		</tr>
 	</tbody>
 </table>

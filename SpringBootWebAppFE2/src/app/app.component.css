@@ -1,3 +1,15 @@
+
+
+/* HTML TAG SELECTOR = '' */
+body {
+	background-color: blue;
+}
+
+/* CLASS SELECTORS = '.' */
+.img_styles {
+	width: 450px;
+	height: 300px;
+}
 .footer {
 	position : sticky footer;
 	bottom : 0;
@@ -6,4 +18,15 @@
 	background-color : #0DCAF0;
 	text-align : center;
 	color : white;
+}
+.wide_img_styles {
+
+	width: 600px;
+	height: 300px;
+}
+
+/* ID SELECTORS = '#' */
+#div_styles {
+	display: flex;
+	justify-content: center;
 }

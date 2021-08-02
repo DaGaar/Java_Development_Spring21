@@ -29,7 +29,22 @@ export class CombatComponent implements OnInit {
       this.characters = data;
     });
   }
+
+  getId(event: Event): string {
+    return (event.target as HTMLInputElement).value;
+  }
   
+  //TODO PERHAPS ASSIGN FIELDS TO PLACEHOLDER VARIABLES?
+  //flush variables after creating action
+  //flush if go back to previus variable creation (chenged mind or messed up)
+  // a?: number = id
+	// b?: number = encounterId
+	// c?: number = attackerId
+	// d?: number = attackedId
+	// e?: number = dmgDone
+	// f?: string = effect
+	// g?: string = type
+
   saveAction() {
     this.actionService.createAction(this.action).subscribe( data => {
       console.log(data);

@@ -16,12 +16,17 @@
         </mat-menu>
 
         <mat-menu #attack="matMenu">
+          <tr *ngFor = "let attacked of characters">
+            <button mat-menu-item >{{attacked.name}}</button>
           <!-- <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
           <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
           <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
           <button mat-menu-item>Birds</button>
           <button mat-menu-item>Mammals</button> -->
+          </tr>
         </mat-menu>
+
+
 
         <mat-menu #castSpell="matMenu">
           <!-- <button mat-menu-item>Insects</button>
@@ -50,13 +55,15 @@
 
 		
     </div>
-  <!-- <div class="form-popup" id="myForm">
+
+    
+  <div class="form-popup" id="myForm">
   <form (ngSubmit)  = "onSubmit()" action="/action_page.php" class="form-container">
     <h1>Action</h1>
 
-    <label><b>ID</b></label>
+    <!-- <label><b>ID</b></label>
 	<input type="text" placeholder="Enter ID" class="form-control" id="id"
-		[(ngModel)] = "action.id" name="id" required>
+		[(ngModel)] = "action.id" name="id" required> -->
 
     <label><b>Attacker ID</b></label>
     <input type="text" class="form-control" id="attackerId"
@@ -66,15 +73,45 @@
     <input type="text" class="form-control" id="attackedId"
 				[(ngModel)] = "action.attackedId" name="attackedID" required>
 
-
 	<label><b>Damage</b></label>
     <input type="text" class="form-control" id="dmgDone"
-				[(ngModel)] = "action.dmgDone" name="dmgDone" required>
+        [(ngModel)] = "action.dmgDone" name="dmgDone" required>
+        
+  <label><b>Effect</b></label>
+    <input type="text" class="form-control" id="effect"
+        [(ngModel)] = "action.effect" name="effect">
+        
+  <label><b>Type</b></label>
+    <input type="text" class="form-control" id="type"
+        [(ngModel)] = "action.type" name="type" required>
+        
+  <label><b>Encounter ID</b></label>
+    <input type="text" class="form-control" id="encounterId"
+				[(ngModel)] = "action.encounterId" name="encounterId" required>
 
     <button type="submit" class="btn btn-success">Do it</button>
   </form>
-</div> -->
+</div>
 </table>
+
+        <!-- <form class="attackDetails" (ngSubmit)="onSubmit()" action="/action_page.php">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Attacked ID</mat-label>
+            <input matInput placeholder="5" [(ngModel)] = "action.id" name="attackedID" required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Attacked ID</mat-label>
+            <input matInput placeholder="5" [(ngModel)] = "action.id" name="attackedID" required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Attacked ID</mat-label>
+            <input matInput placeholder="5" [(ngModel)] = "action.id" name="attackedID" required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Attacked ID</mat-label>
+            <input matInput placeholder="5" [(ngModel)] = "action.id" name="attackedID" required>
+          </mat-form-field>
+        </form> -->
 
 
 <script>

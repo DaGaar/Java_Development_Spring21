@@ -17,6 +17,7 @@ import com.gaar.dmhelper.DmHelper.Model.Pc;
 
 import Exception.ResourceNotFoundException;
 
+
 @Service
 public class PcService {
 
@@ -36,6 +37,17 @@ public class PcService {
 	public Pc save(Pc pc) {
 		System.out.println("inside PcService saveAndFLush");
 		return pcDAO.saveAndFlush(pc);
+	}
+	
+	public List<Pc> getParty(Long partyId) {
+		List<Pc> party = new LinkedList<Pc>();
+		List<Pc> allPcs = findAll();
+		for (int i = 0; i < allPcs.size(); i++) {
+			if (partyId == allPcs.get(i).getParty()) {
+				party.add(allPcs.get(i));			
+			}
+		}
+		return party;
 	}
 	
 	public Pc findById(Long id) {
@@ -93,6 +105,10 @@ public class PcService {
 				getMissedPercent);
 		System.out.println(atkOut);
 		return stats;
+	}
+	
+	public void delete(Pc pc) {
+		pcDAO.delete(pc);
 	}
 	//TODO
 //	public int getDmgTaken(Pc pc) {

@@ -6,6 +6,7 @@ import { CharacterListComponent } from './character-list/character-list.componen
 import { CharacterStatsComponent } from './character-stats/character-stats.component';
 import { CreateCharacterComponent } from './create-character/create-character.component';
 import { CreateEncounterComponent } from './create-encounter/create-encounter.component';
+import { EditCharacterComponent } from './edit-character/edit-character.component';
 
 const routes : Routes = [
 	{path : 'combat', component: CombatComponent},
@@ -14,7 +15,8 @@ const routes : Routes = [
 	{path : 'create-encounter', component: CreateEncounterComponent},
 	{path : '', redirectTo: 'characters', pathMatch: 'full'},
 	{path: 'character-stats/:id', component: CharacterStatsComponent},
-	{path: 'create-character', component: CreateCharacterComponent}
+	{path: 'create-character', component: CreateCharacterComponent},
+	{path : 'edit-character/:id', component: EditCharacterComponent}
 
 ]
 

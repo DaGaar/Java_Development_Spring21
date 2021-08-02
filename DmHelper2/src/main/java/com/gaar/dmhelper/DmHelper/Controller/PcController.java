@@ -1,13 +1,16 @@
 package com.gaar.dmhelper.DmHelper.Controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -84,6 +87,23 @@ public class PcController {
 		
 		Stats stats = pcService.genStats(id);
 		return ResponseEntity.ok(stats);
+	}
+	
+	@DeleteMapping("/pcs/{id}")
+	public ResponseEntity<Map<String, Boolean>> deletePc(@PathVariable Long id) {
+		
+		//STEP ONE: RETRIEVE STUDENT RECORD FROM THE DATABASE USING ID
+		Pc pc = pcService.findById(id);
+		
+		// STEP TWO: USE CALL SERVICE'S DELETE METHOD
+		pcService.delete(pc);
+		
+		// STEP THREE: CREATE A HASHMAP TO HOLD A MSG (KEY) AND TRUE (VALUE)
+		Map<String, Boolean> response = new HashMap<String, Boolean>();
+		response.put("deleted", Boolean.TRUE);
+		
+		// RETURN MAP INSIDE RESPONSE ENTITY
+		return ResponseEntity.ok(response);
 	}
 	
 	//TODO

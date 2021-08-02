@@ -12,32 +12,50 @@ import { Student } from '../student';
 })
 export class ScholarshipListComponent implements OnInit {
 
-  scholarships?: Scholarship[];
-  students?: Student[];
+  scholarships: Scholarship[];
+  amountTotal: number;
+  studentCount: number;
 
 
-  constructor(private scholarshipService: ScholarshipService, private studentService:
-    StudentService, private router: Router) { }
+
+  constructor(private scholarshipService: ScholarshipService, private router: Router) { 
+
+      this.scholarships= [];
+      this.amountTotal = 0;
+      this.studentCount = 0;
+    }
 
   ngOnInit(): void {
     this.getScholarships();
-    this.getStudents();
+    // this.getStudents();
 
   }
 
   private getScholarships() {
     this.scholarshipService.getScholarshipList().subscribe(data => {
       this.scholarships = data;
-    });
-  }
-
-   private getStudents() {
-    this.studentService.getStudentList().subscribe(data => {
-      this.students = data;
+      this.sumAmounts();
+      this.sumStudents();
+      console.log("Scholarship List: ", this.scholarships);
     });
   }
 
    viewScholarship(id?: number) {
     this.router.navigate(['scholarship-detail', id]);
   }
-}
+
+  sumStudents() {
+    for(let scholarship of this.scholarships) {
+      for(let i=0; i < scholarship.students.length; i++) {
+        this.studentCount++;
+      }
+    }
+  }
+
+  sumAmounts() {
+    for(let scholarship of this.scholarships) {
+      this.amountTotal += scholarship.amount;
+    }
+  }
+
+} 

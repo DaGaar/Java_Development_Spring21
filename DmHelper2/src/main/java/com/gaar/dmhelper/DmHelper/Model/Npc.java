@@ -23,8 +23,8 @@ public class Npc {
 	
 
 	
-	@ManyToMany(mappedBy = "npc")
-	private List<EncounterCombat> encounterCombat;
+//	@ManyToMany(mappedBy = "npc")
+//	private List<EncounterCombat> encounterCombat;
 	
 //	@OneToMany(mappedBy = "npc")
 //	private List<EncounterCombat> encounterCombat;
@@ -34,20 +34,20 @@ public class Npc {
 		super();
 	}
 	
-	public Npc(Long id, String name, Double dc, Boolean enemy, Boolean ally, Integer perceptionMod, Integer insightMod,
-			Integer ac, Integer initiative, List<EncounterCombat> encounterCombat) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.dc = dc;
-		this.enemy = enemy;
-		this.ally = ally;
-		this.perceptionMod = perceptionMod;
-		this.insightMod = insightMod;
-		this.ac = ac;
-		this.initiative = initiative;
-		this.encounterCombat = encounterCombat;
-	}
+//	public Npc(Long id, String name, Double dc, Boolean enemy, Boolean ally, Integer perceptionMod, Integer insightMod,
+//			Integer ac, Integer initiative, List<EncounterCombat> encounterCombat) {
+//		super();
+//		this.id = id;
+//		this.name = name;
+//		this.dc = dc;
+//		this.enemy = enemy;
+//		this.ally = ally;
+//		this.perceptionMod = perceptionMod;
+//		this.insightMod = insightMod;
+//		this.ac = ac;
+//		this.initiative = initiative;
+//		this.encounterCombat = encounterCombat;
+//	}
 	
 	//GETTERS AND SETTERS
 	public Long getId() {
@@ -122,13 +122,13 @@ public class Npc {
 		this.initiative = initiative;
 	}
 
-	public List<EncounterCombat> getEncounterCombat() {
-		return encounterCombat;
-	}
-
-	public void setEncounterCombat(List<EncounterCombat> encounterCombat) {
-		this.encounterCombat = encounterCombat;
-	}
+//	public List<EncounterCombat> getEncounterCombat() {
+//		return encounterCombat;
+//	}
+//
+//	public void setEncounterCombat(List<EncounterCombat> encounterCombat) {
+//		this.encounterCombat = encounterCombat;
+//	}
 
 	
 	@Override

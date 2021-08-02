@@ -15,12 +15,30 @@
       </li>
   </ul>
 </nav>
-
+<body>
 <h1 class="text-center">{{title}}</h1>
+
+<div id="div_styles">
+  <table>
+    <tr>
+      <th>
+        <img [src]="courtYard" alt="University Image" class="img_styles">
+      </th>
+      <th>
+        <img [src]="niceBuilding" alt="University Image" class="wide_img_styles">
+      </th>
+      <th>
+        <img [src]="studentGrad" alt="University Image" class="img_styles">
+      </th>
+    </tr>
+  </table>
+</div>
 
 <div class = "container">
   <router-outlet></router-outlet>
 </div>
+
+</body>
 
 <footer class="footer">
   <div class="container">

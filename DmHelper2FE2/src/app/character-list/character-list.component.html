@@ -6,10 +6,10 @@
 			<th>Name</th>
 			<th>Max HP</th>
 			<th>Current HP</th>
-			<th>Hits</th>
-			<th>Hit%</th>
-			<th>Damage</th>
-			<th>Damage Recieved</th>
+			<th></th>
+			<th></th>
+			<th></th>
+		
 		
 		</tr>
 	</thead>
@@ -21,18 +21,30 @@
 			<td>{{character.currentHp}}</td>
 			<!-- <td>{{getStats(character.id)}}</td>	 -->
 			<td>
-				<button (click) = "viewCharStats(character?.id)" class=
+				<button (click) = "viewCharStats(character.id)" class=
 					"btn btn-primary" id="viewBtn">View Stats
+				</button>
+			</td>
+			<td>
+				<button (click) = "editCharacter(character.id)" class=
+					"btn btn-primary" id="viewBtn">Edit
+				</button>
+			</td>
+			<td>
+				<button (click) = "deleteCharacter(character.id)" class=
+					"btn btn-primary" id="viewBtn">Delete
 				</button>
 			</td>
 		</tr>
 		<tr>
 			<button (click) = "createCharacter()" 
-				class = "btn btn-primary">Create Character</button>
+				class="btn btn-primary" id="createChar">Create Character
+			</button>
 		</tr>
 <!-- 		
 		<tr *ngFor = "let stat of stats">
 			<td>{{stat.currentHp}}</td>	
 		</tr> -->
 	</tbody>
+	
 </table>

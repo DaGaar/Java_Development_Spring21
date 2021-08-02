@@ -1,8 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Character } from '../character';
+import { Combatant } from '../combatant';
 import { CharacterService } from '../character-service';
+import { CombatantService } from '../combatantservice';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import {ThemePalette} from '@angular/material/core';
+
+
+export interface ChipColor {
+  name: string;
+  color: ThemePalette;
+}
+
 
 
 @Component({
@@ -12,13 +22,29 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CreateEncounterComponent implements OnInit {
 
+  availableColors: ChipColor[] = [
+    {name: 'none', color: undefined},
+    {name: 'Primary', color: 'primary'},
+    {name: 'Accent', color: 'accent'},
+    {name: 'Warn', color: 'warn'}
+  ];
+
   id?: number;
   character?: Character;
+  allCharacters?: Character[];
+  allCombatants?: Combatant[];
+  allies?: Character[];
+  enemies?: Character[];
 
   constructor(private characterService: CharacterService, 
-    private router: Router) { }
+    private combatantService: CombatantService, private router: Router) {
+      this.character = new Character();
+     }
 
   ngOnInit(): void {
+    this.getAllCharacters();
+        this.getAllCombatants();
+
     // this.id = this.route.snapshot.params['id'];
     // this.character = new Character();
     // this.characterService.getCharacterById(this.id).subscribe( data => {
@@ -26,13 +52,46 @@ export class CreateEncounterComponent implements OnInit {
     // });
   }
 
-  private loadCharacter(id?: number) {
-    this.characterService.getCharacterById().subscribe(data => {
-      this.character = data;
+  //TODO: MAKE VIEW UPDATE CHARACTER LIST (mat-chip)
+  loadAlly(character: Character) {
+    this.allies?.push(character);
+    console.log(character);
+    //this.goToCharacterList();
+    // this.combatantService.createCombatant(this.combatant).subscribe( data => {
+    //   console.log(data);
+     // this.goToCharacterList();
+    // },
+    // error => console.log(error));
+    
+  }
+
+  onSubmit() {
+    this.goToCharacterList();
+  }
+
+   goToCharacterList() {
+    this.router.navigate(['/characters']);
+  }
+
+  
+  createCharacter() {
+    this.router.navigate(['create-character']);
+    //    this.id = this.route.snapshot.params['id'];
+    // this.character = new Character();
+    // this.characterService.getCharacterById(this.id).subscribe( data => {
+    //   this.character = data;
+    // });
+  }
+
+  private getAllCharacters() {
+    this.characterService.getCharacterList().subscribe(data => {
+      this.allCharacters = data;
     });
   }
 
-  createCharacter() {
-    this.router.navigate(['create-character']);
+    private getAllCombatants() {
+    this.combatantService.getCombatantList().subscribe(data => {
+      this.allCombatants = data;
+    });
   }
 }

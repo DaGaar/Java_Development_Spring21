@@ -17,7 +17,7 @@ export class CreateCharacterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-    saveCharacter() {
+  saveCharacter() {
     this.characterService.createCharacter(this.character).subscribe( data => {
       console.log(data);
       this.goToCharacterList();

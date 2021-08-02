@@ -37,6 +37,18 @@ export class CharacterListComponent implements OnInit {
     this.router.navigate(['character-stats', id]);
   }
 
+  editCharacter(id?: number) {
+    console.log(id);
+    this.router.navigate(['edit-character', id]);
+  }
+
+  deleteCharacter(id?: number) {
+    this.characterService.deleteCharacter(id).subscribe(data => {
+      console.log(data);
+      this.getCharacters();
+    });
+  }
+
   createCharacter() {
     this.router.navigate(['create-character']);
   }

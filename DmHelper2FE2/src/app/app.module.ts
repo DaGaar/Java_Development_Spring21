@@ -13,8 +13,15 @@ import { CharacterListComponent } from './character-list/character-list.componen
 import { CharacterStatsComponent } from './character-stats/character-stats.component';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatCardModule} from '@angular/material/card';
 import { CreateCharacterComponent } from './create-character/create-character.component';
 import { CreateEncounterComponent } from './create-encounter/create-encounter.component';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import { EditCharacterComponent } from './edit-character/edit-character.component';
+
+
 
 
 @NgModule({
@@ -26,7 +33,8 @@ import { CreateEncounterComponent } from './create-encounter/create-encounter.co
     CharacterListComponent,
     CharacterStatsComponent,
     CreateCharacterComponent,
-    CreateEncounterComponent
+    CreateEncounterComponent,
+    EditCharacterComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +44,11 @@ import { CreateEncounterComponent } from './create-encounter/create-encounter.co
     FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCardModule,
+    MatChipsModule,
+    MatSelectModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

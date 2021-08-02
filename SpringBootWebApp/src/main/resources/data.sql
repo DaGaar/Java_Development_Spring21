@@ -45,3 +45,18 @@ insert into student_scholarships(students_id, scholarships_id) values (101, 101)
 insert into student_scholarships(students_id, scholarships_id) values (101, 102);
 insert into student_scholarships(students_id, scholarships_id) values (102, 102);
 insert into student_scholarships(students_id, scholarships_id) values (103, 104);
+
+INSERT INTO advisor(name, department) VALUES ('Mack Mackey', 'tropology');
+INSERT INTO advisor(name, department) VALUES (' MackMackey', 'Antopology');
+INSERT INTO advisor(name, department) VALUES ('Mackey', 'Apology');
+INSERT INTO advisor(name, department) VALUES ('ckey', 'Antropology');
+INSERT INTO advisor(name, department) VALUES ('Macey', 'Antgy');
+INSERT INTO advisor(name, department) VALUES ('ck Mackey', 'Aopology');
+
+--insert into payment(type, amount) values ('guilty pleasure', 100)
+--insert into payment(type, amount) values ('spending money', 40)
+--insert into payment(type, amount) values ('savings', 500)
+--insert into payment(type, amount) values ('college fund', 3899)
+
+INSERT INTO payment(id, type, amount) 
+	VALUES (PAYMENT_SEQ.nextval, 'Tuition', 3000);

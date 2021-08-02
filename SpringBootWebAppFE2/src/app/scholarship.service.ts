@@ -20,7 +20,5 @@ export class ScholarshipService {
     return this.httpClient.get<Scholarship>(`${this.baseURL}/${id}`);
   }
 
-  viewScholarship(id?: number, scholarship?: Scholarship): Observable<Object>{
-    return this.httpClient.get<Scholarship>(`${this.baseURL}/${id}`);
-  }
+
 }

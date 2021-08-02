@@ -28,6 +28,10 @@ export class CharacterService {
  		return this.httpClient.get<Character>(`${this.baseURL}/${id}`);
 	}
 
+	// getCharNameById(id?: number): Observable<Character>{
+	// 	return this.httpClient.get<Character>(`${this.baseURL}/${id}`).
+	// }
+
 	// getCharacterByName(name?: string): Observable<Character>{
 	// 	return this.httpClient.get<Character>
 	// }
@@ -39,6 +43,14 @@ export class CharacterService {
 	getCharStats(id?: number): Observable<Stats>{
 		return this.httpClient.get<Stats>(`${this.statsBaseURL}/${id}`)
 
+	}
+
+	editCharacter(id?: number, character?: Character): Observable<Object>{
+		return this.httpClient.put(`${this.baseURL}/${id}`, character);
+	}
+
+	deleteCharacter(id?: number): Observable<Object> {
+		return this.httpClient.delete(`${this.baseURL}/${id}`);
 	}
 
 	// getCharAttacks(id?: number): number{
